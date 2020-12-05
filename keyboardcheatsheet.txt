@@ -1,0 +1,26 @@
+basic/ most heavily used commands, there are some more that you can see for yourself
+in config.h. you may of course add your own or change them as you please.
+
+your MODKEY is Super aka Windows key
+
+MOD + ENTER           terminal (terminator)
+MOD + X               close window
+MOD + P               startup menu (dmenu)
+MOD + SHIFT + Q       quit dwm session
+MOD + Z               toggle taskbar
+MOD + T               tiling (default)
+MOD + M               monacle (fullscreen-ish)
+MOD + F               floating
+MOD + SPACEBAR        toggle floating/tiling
+MOD +                 Right Click drag floating window
+MOD +                 Left Click resize floating window
+MOD + W               firefox
+MOD + B , N           cycle tags
+MOD + comma , period  switch focus between monitors
+MOD + J , K           switch focus between windows
+MOD + H , L           resize master window
+MOD + U , I           switch layouts
+MOD + minus ,         plus resize vanity gaps
+MOD + CTL + minus ,   volume up and down
+MOD + CTL + X         xkill
+MOD + 1, 2, 3, ..,9   jump to tag x  

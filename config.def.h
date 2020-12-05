@@ -21,7 +21,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };  //tags are in fontawesome unicode
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -103,8 +103,8 @@ static Key keys[] = {
 	{ 0,                       XF86XK_AudioMute,        spawn, {.v = mutevol } },
 	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
 	{ MODKEY|ControlMask,      XK_minus,                spawn, {.v = downvol } },
-  { MODKEY|ControlMask,      XK_equal,                spawn, {.v = mutevol } },
-  { MODKEY|ControlMask,      XK_m,                    spawn, {.v = upvol   } },
+  { MODKEY|ControlMask,      XK_equal,                spawn, {.v = upvol } },
+  { MODKEY|ControlMask,      XK_m,                    spawn, {.v = mutevol   } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
