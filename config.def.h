@@ -11,7 +11,7 @@ static const char *fonts[]          = { "monospace:size=13", "fontawesome:size=1
 static const char dmenufont[]       = "monospace:size=13";
 static const char col_gray1[]       = "#10734b"; //accent and active window color, green
 static const char col_gray2[]       = "#000c07"; //border color for accent, black
-static const char col_gray3[]       = "#101010"; //font color for accent, black
+static const char col_gray3[]       = "#000000"; //font color for accent, black
 static const char col_gray4[]       = "#b0c5d6"; //font color taskbar, greyish beige
 static const char col_cyan[]        = "#101010"; //taskbar color, currently black
 static const char *colors[][3]      = {
@@ -57,9 +57,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "terminator", NULL };
 static const char *web[]      = { "firefox", NULL};
 static const char *filemgr[]      = { "nautilus", NULL};
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "1", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "1", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "1", "toggle",  NULL };
 static const char *rambox[] =  { "/home/matty/Projects/Rambox-0.7.7-linux-x86_64.AppImage", NULL};
 
 #include "shiftview.c"

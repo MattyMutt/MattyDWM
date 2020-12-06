@@ -5,12 +5,12 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 
 Requirements
 ------------
-In order to build dwm you need: git xorg xserver-xorg linux-headers firmware-linux-free mesa-utils wget curl build-essential 
+In order to build dwm you need: git xorg xserver-xorg linux-headers firmware-linux-free mesa-utils wget curl build-essential
 
 Recommended dependencies for matty's build: picom, feh, nautilus, pulseaudio, firefox, terminator, fontawesome, dmenu, xorg-xsetroot
 
-additional dependencies may be required depending on which modules you choose for dwm-bar in MattyDWM/dwm-bar/dwm-bar.sh. see the dwm-bar patch on suckless's website for more specific information. 
-Installation
+additional dependencies may be required depending on which modules you choose for dwm-bar in MattyDWM/dwm-bar/dwm-bar.sh. see https://github.com/joestandring/dwm-bar#current-functions
+for more information
 ------------
 git clone into your Projects folder in the home directory
 
@@ -34,11 +34,11 @@ I prefer using the .xsession file personally. replace all instance of USER with 
 #Prefer maximum performance with nvidia driver, not relevant unless you have both a nvidia driver and the nvidia-settings GUI
 #nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1" &
 
-#Set a random desktop background, requires feh. you only need one path per monitor. in this example it is telling feh to 
+#Set a random desktop background, requires feh. you only need one path per monitor. in this example it is telling feh to
 choose a background from the Backrounds folder in your home directory at random and scale it (once for each monitor)
 feh --bg-scale --randomize ~/Backgrounds ~/Backgrounds  &
 
-#start my window compositor. the picom.conf file can be edited in order to change compositor behavior on startup. 
+#start my window compositor. the picom.conf file can be edited in order to change compositor behavior on startup.
 there are a lot of options and it's all really nicely commented.
 
 picom -b --config /home/USER/Projects/MattyDWM/picom.conf &

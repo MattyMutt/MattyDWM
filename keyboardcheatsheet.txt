@@ -16,11 +16,11 @@ MOD +                 Right Click drag floating window
 MOD +                 Left Click resize floating window
 MOD + W               firefox
 MOD + B , N           cycle tags
-MOD + comma , period  switch focus between monitors
+MOD + comma , period  switch focus between monitors (+ SHIFT to send focused window to another monitor)
 MOD + J , K           switch focus between windows
 MOD + H , L           resize master window
-MOD + U , I           switch layouts
+MOD + U , I           decrease, increase amount of windows in the master area
 MOD + minus ,         plus resize vanity gaps
 MOD + CTL + minus ,   volume up and down
 MOD + CTL + X         xkill
-MOD + 1, 2, 3, ..,9   jump to tag x  
+MOD + 1, 2, 3, ..,9   jump to tag x  (+ SHIFT send focused window to tag x)
