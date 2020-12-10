@@ -7,7 +7,7 @@ Requirements
 ------------
 In order to build dwm you need: git xorg xserver-xorg linux-headers firmware-linux-free mesa-utils wget curl build-essential
 
-Recommended dependencies for matty's build: picom, feh, nautilus, pulseaudio, firefox, terminator, fontawesome, dmenu, xorg-xsetroot
+Recommended dependencies for matty's build: picom, feh, nautilus, pulseaudio, firefox, scrot, fontawesome, dmenu, xorg-xsetroot, st, firefox, pywal
 
 additional dependencies may be required depending on which modules you choose for dwm-bar in MattyDWM/dwm-bar/dwm-bar.sh. see https://github.com/joestandring/dwm-bar#current-functions
 for more information

@@ -1,9 +1,11 @@
 basic/ most heavily used commands, there are some more that you can see for yourself
 in config.h. you may of course add your own or change them as you please.
 
+
+                  DWM
 your MODKEY is Super aka Windows key
 
-MOD + ENTER           terminal (terminator)
+MOD + ENTER           terminal (st)
 MOD + X               close window
 MOD + P               startup menu (dmenu)
 MOD + SHIFT + Q       quit dwm session
@@ -12,15 +14,30 @@ MOD + T               tiling (default)
 MOD + M               monacle (fullscreen-ish)
 MOD + F               floating
 MOD + SPACEBAR        toggle floating/tiling
+MOD + CTL + ENTER     Make master
 MOD +                 Right Click drag floating window
 MOD +                 Left Click resize floating window
-MOD + W               firefox
+MOD + W               firefox (browser)
 MOD + B , N           cycle tags
 MOD + comma , period  switch focus between monitors (+ SHIFT to send focused window to another monitor)
 MOD + J , K           switch focus between windows
 MOD + H , L           resize master window
 MOD + U , I           decrease, increase amount of windows in the master area
-MOD + minus ,         plus resize vanity gaps
-MOD + CTL + minus ,   volume up and down
+MOD + minus,plus      resize vanity gaps
+MOD + CTL + minus,plus   volume up and down
 MOD + CTL + X         xkill
 MOD + 1, 2, 3, ..,9   jump to tag x  (+ SHIFT send focused window to tag x)
+CTRL + P              Screencap (scrot)
+MOD + C               start compositor
+MOD + SHIFT + C       kill compositor
+MOD + CTL + F         nautilus (file manager)
+MOD + A               set new desktop background and terminal theme (pywal)
+
+                    st
+ALT + up/down or k/j            scroll
+ALT + C                         copy
+ALT + V                         paste
+ALT + SHIFT + up/down or k/j    zoom
+ALT + o                         copy output
+ALT + y                         copy link
+ALT + l                         follow link

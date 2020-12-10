@@ -54,16 +54,21 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "terminator", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char *web[]      = { "firefox", NULL};
 static const char *filemgr[]      = { "nautilus", NULL};
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "1", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "1", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "1", "toggle",  NULL };
-static const char *rambox[] =  { "/home/matty/Projects/Rambox-0.7.7-linux-x86_64.AppImage", NULL};
+static const char *pywal[] =  { "/home/matty/Projects/wal.sh", NULL};
+
 
 #include "shiftview.c"
 #include <X11/XF86keysym.h>
+
+/* commands spawned when clicking statusbar, the mouse button pressed is exported as BUTTON */
+static char *statuscmds[] = { "notify-send Mouse$BUTTON" };
+static char *statuscmd[] = { "/bin/sh", "-c", NULL, NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -73,16 +78,18 @@ static Key keys[] = {
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
   { MODKEY,                       XK_w,      spawn,          {.v = web } },
 	{ MODKEY|ControlMask,           XK_f,      spawn,          {.v = filemgr } },
-	{ MODKEY|ControlMask,           XK_r,      spawn,          {.v = rambox } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_u,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ControlMask,           XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_x,      killclient,     {0} },
 	{ MODKEY|ControlMask,           XK_x,      spawn,          SHCMD("xkill") },
+	{ MODKEY|ControlMask,           XK_c,      spawn,          SHCMD("killall picom") },
+	{ ControlMask,                  XK_p,      spawn,          SHCMD("cd /home/matty/Documents/Images/Screencaps && scrot") },
+	{ MODKEY,                       XK_c,      spawn,          SHCMD("picom -b --config /home/matty/Projects/MattyDWM/picom.conf") },
+	{ MODKEY,                       XK_a,      spawn,          {.v = pywal } },
 	{ MODKEY,                        XK_n,      shiftview,      { .i = + 1} },
 	{ MODKEY,                        XK_b,      shiftview,      { .i = - 1} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
@@ -124,7 +131,9 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button1,        spawn,          {.v = statuscmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = statuscmd } },
+	{ ClkStatusText,        0,              Button3,        spawn,          {.v = statuscmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
