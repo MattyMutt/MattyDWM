@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Statusbar
+/home/matty/Projects/MattyDWM/dwm-bar/dwm_bar.sh &
+
+#Prefer maximum performance with nvidia driver
+nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1" &
+
+#Set a random desktop background
+#feh --bg-scale --randomize ~/Backgrounds ~/Backgrounds  &
+
+#start my window compositor
+
+picom -b --config /home/matty/Projects/MattyDWM/picom.conf &
+
+#restore pywall configuration on reboot
+
+#wal -R &
+
+#start my wal script which chooses a random background and theme each hour
+
+/home/matty/Projects/walloop.sh &
+
+# start my window manager
+exec dwm
