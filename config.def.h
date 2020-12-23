@@ -61,6 +61,7 @@ static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "1", "+5%"
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "1", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "1", "toggle",  NULL };
 static const char *pywal[] =  { "/home/matty/Projects/wal.sh", NULL};
+static const char *lockscreen[] =  { "/home/matty/Projects/lockscreen.py", NULL};
 
 
 #include "shiftview.c"
@@ -88,6 +89,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_x,      spawn,          SHCMD("xkill") },
 	{ MODKEY|ControlMask,           XK_c,      spawn,          SHCMD("killall picom") },
 	{ ControlMask,                  XK_p,      spawn,          SHCMD("cd /home/matty/Documents/Images/Screencaps && scrot") },
+	{ ControlMask,                  XK_l,      spawn,          {.v = lockscreen } },
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("picom -b --config /home/matty/Projects/MattyDWM/picom.conf") },
 	{ MODKEY,                       XK_a,      spawn,          {.v = pywal } },
 	{ MODKEY,                        XK_n,      shiftview,      { .i = + 1} },
